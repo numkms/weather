@@ -27,10 +27,12 @@ extension ResultPresenter: ResultInteractorToPresenterProtocol {
         var sections: [ResultTableSection] = []
         let selectVacationModel = SelectVacationService.shared.model
         sections.append(.init(header: "Погода за окном", rows: [
-            .init(label: "Температура", value: "\(selectVacationModel.myWeather.temperature ?? 0) \(selectVacationModel.myWeather.temperatureUnit)"),
+            .init(
+                label: "Температура",
+                value: "\(selectVacationModel.myWeather.temperature ?? 0) \(selectVacationModel.myWeather.temperatureUnit)"),
             .init(label: "Ветер", value: "\(selectVacationModel.myWeather.wind ?? 0) \(selectVacationModel.myWeather.windUnit)"),
             .init(label: "Осадки", value: "\(selectVacationModel.myWeather.precipitation ?? 0) \(selectVacationModel.myWeather.precipitationUnit)")
-        ]));
+        ], color: .systemOrange));
         var i = 1;
         let forecastSections: [ResultTableSection] = model.weathers.map { weather in
             let place = weather.place

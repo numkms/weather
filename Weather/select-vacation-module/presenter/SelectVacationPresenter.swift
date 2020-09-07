@@ -54,7 +54,7 @@ extension SelectVacationPresenter: InteractorToPresenterProtocol {
     
     func selectWind() {
         view?.selectWind(windsVlaues: (0...40).map { windSpeed in
-            return .init(key: windSpeed, value: "\(windSpeed) м/с")
+            return .init(key: windSpeed, value: "\(windSpeed) км/ч")
         })
     }
     

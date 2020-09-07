@@ -12,7 +12,7 @@ import UIKit
 struct ResultTableSection {
     let header: String
     let rows: [Row]
-    var color: UIColor? = nil
+    var color: UIColor = .lightGray
     
     struct Row {
         let label: String

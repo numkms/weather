@@ -78,6 +78,19 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         return tableViewSections[section].rows.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+
+        //For Header Background Color
+        view.tintColor = tableViewSections[section].color
+        // For Header Text Color
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = .white
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = tableViewSections[indexPath.section].rows[indexPath.row]
         let cell = UITableViewCell(style: cellData.style , reuseIdentifier: nil)
