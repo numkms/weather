@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kzi-fH-oWg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Vacation View Controller-->
+        <scene sceneID="0WU-st-Nsu">
+            <objects>
+                <viewController storyboardIdentifier="SelectVacationVC" id="kzi-fH-oWg" customClass="SelectVacationViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ix-XU-4in">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l5J-3t-5bb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="771"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn8-Wu-SLp">
+                                <rect key="frame" x="0.0" y="815" width="414" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="fJu-Kl-frB"/>
+                                </constraints>
+                                <state key="normal" title="  Перейти к результату" image="airplane" catalog="system">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToResult:" destination="kzi-fH-oWg" eventType="touchUpInside" id="L83-Sq-BSh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lcp-We-MFo" firstAttribute="trailing" secondItem="l5J-3t-5bb" secondAttribute="trailing" id="J0y-Qb-Knx"/>
+                            <constraint firstItem="l5J-3t-5bb" firstAttribute="leading" secondItem="lcp-We-MFo" secondAttribute="leading" id="KnG-Mu-eq5"/>
+                            <constraint firstItem="lcp-We-MFo" firstAttribute="top" secondItem="l5J-3t-5bb" secondAttribute="top" id="NsI-8R-aYS"/>
+                            <constraint firstItem="Sn8-Wu-SLp" firstAttribute="leading" secondItem="lcp-We-MFo" secondAttribute="leading" id="VQC-tS-XDs"/>
+                            <constraint firstItem="Sn8-Wu-SLp" firstAttribute="top" secondItem="l5J-3t-5bb" secondAttribute="bottom" id="b8R-Qh-d2T"/>
+                            <constraint firstItem="lcp-We-MFo" firstAttribute="trailing" secondItem="Sn8-Wu-SLp" secondAttribute="trailing" id="dIJ-xu-UQU"/>
+                            <constraint firstItem="Sn8-Wu-SLp" firstAttribute="bottom" secondItem="lcp-We-MFo" secondAttribute="bottom" id="kBy-ui-bOb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lcp-We-MFo"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultButton" destination="Sn8-Wu-SLp" id="IfT-kc-oPr"/>
+                        <outlet property="tableView" destination="l5J-3t-5bb" id="WeK-FU-OaQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ril-qb-qij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="6.6964285714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airplane" catalog="system" width="128" height="115"/>
+    </resources>
+</document>
